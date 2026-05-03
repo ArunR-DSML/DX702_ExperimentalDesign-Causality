@@ -1,0 +1,101 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#2c3e50">
+    Lightning Storm Ecosystem Interactions
+  </text>
+  
+  <!-- Lightning storms node -->
+  <g id="lightning">
+    <circle cx="400" cy="100" r="45" fill="#f39c12" stroke="#e67e22" stroke-width="3"/>
+    <text x="400" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Lightning</text>
+    <text x="400" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Storms</text>
+    <text x="400" y="115" text-anchor="middle" font-size="10" fill="white">(External Factor)</text>
+  </g>
+  
+  <!-- Bear population node -->
+  <g id="bears">
+    <circle cx="200" cy="250" r="40" fill="#8b4513" stroke="#654321" stroke-width="3"/>
+    <text x="200" y="245" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Bear</text>
+    <text x="200" y="260" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Population</text>
+  </g>
+  
+  <!-- Deer population node -->
+  <g id="deer">
+    <circle cx="600" cy="250" r="40" fill="#228b22" stroke="#006400" stroke-width="3"/>
+    <text x="600" y="245" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Deer</text>
+    <text x="600" y="260" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Population</text>
+  </g>
+  
+  <!-- Flower population node -->
+  <g id="flowers">
+    <circle cx="400" cy="400" r="40" fill="#ff69b4" stroke="#ff1493" stroke-width="3"/>
+    <text x="400" y="395" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Flower</text>
+    <text x="400" y="410" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Population</text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead-negative" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrowhead-positive" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60"/>
+    </marker>
+  </defs>
+  
+  <!-- Lightning to Bears (negative) -->
+  <path d="M 370 130 Q 285 190 230 220" fill="none" stroke="#e74c3c" stroke-width="3" 
+        marker-end="url(#arrowhead-negative)"/>
+  <text x="300" y="170" font-size="10" fill="#e74c3c" font-weight="bold">Frightens away (-)</text>
+  
+  <!-- Lightning to Deer (negative) -->
+  <path d="M 430 130 Q 515 190 570 220" fill="none" stroke="#e74c3c" stroke-width="3" 
+        marker-end="url(#arrowhead-negative)"/>
+  <text x="500" y="170" font-size="10" fill="#e74c3c" font-weight="bold">Frightens away (-)</text>
+  
+  <!-- Lightning to Flowers (positive) -->
+  <path d="M 400 145 L 400 360" fill="none" stroke="#27ae60" stroke-width="3" 
+        marker-end="url(#arrowhead-positive)"/>
+  <text x="420" y="250" font-size="10" fill="#27ae60" font-weight="bold">Causes growth (+)</text>
+  
+  <!-- Bears to Deer (negative) -->
+  <path d="M 240 250 L 560 250" fill="none" stroke="#e74c3c" stroke-width="3" 
+        marker-end="url(#arrowhead-negative)"/>
+  <text x="400" y="240" font-size="10" fill="#e74c3c" font-weight="bold">Predation (-)</text>
+  
+  <!-- Deer to Flowers (negative) -->
+  <path d="M 570 280 Q 485 340 430 375" fill="none" stroke="#e74c3c" stroke-width="3" 
+        marker-end="url(#arrowhead-negative)"/>
+  <text x="500" y="330" font-size="10" fill="#e74c3c" font-weight="bold">Grazing (-)</text>
+  
+  <!-- Legend -->
+  <g id="legend">
+    <rect x="50" y="450" width="200" height="120" fill="white" stroke="#bdc3c7" stroke-width="2" rx="5"/>
+    <text x="150" y="470" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c3e50">Legend</text>
+    
+    <line x1="70" y1="485" x2="90" y2="485" stroke="#27ae60" stroke-width="3" marker-end="url(#arrowhead-positive)"/>
+    <text x="100" y="490" font-size="11" fill="#2c3e50">Positive effect (+)</text>
+    
+    <line x1="70" y1="505" x2="90" y2="505" stroke="#e74c3c" stroke-width="3" marker-end="url(#arrowhead-negative)"/>
+    <text x="100" y="510" font-size="11" fill="#2c3e50">Negative effect (-)</text>
+    
+    <text x="70" y="530" font-size="10" fill="#7f8c8d">Positive: Increases population</text>
+    <text x="70" y="545" font-size="10" fill="#7f8c8d">Negative: Decreases population</text>
+  </g>
+  
+  <!-- Summary box -->
+  <g id="summary">
+    <rect x="520" y="450" width="230" height="120" fill="white" stroke="#bdc3c7" stroke-width="2" rx="5"/>
+    <text x="635" y="470" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c3e50">System Summary</text>
+    <text x="540" y="490" font-size="10" fill="#2c3e50">• Lightning storms are external driver</text>
+    <text x="540" y="505" font-size="10" fill="#2c3e50">• Bears and deer both decrease with storms</text>
+    <text x="540" y="520" font-size="10" fill="#2c3e50">• Flowers increase with storms</text>
+    <text x="540" y="535" font-size="10" fill="#2c3e50">• Bears prey on deer</text>
+    <text x="540" y="550" font-size="10" fill="#2c3e50">• Deer graze on flowers</text>
+  </g>
+</svg>
