@@ -1,0 +1,10 @@
+name: Mirror to Personal Account
+on: [push]
+jobs:
+  git-mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@v1
+        with:
+          source-repo: "https://github.com/ArunR-DSML/DX702_ExperimentalDesign-Causality.git"
+          destination-repo: "https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/AnuBegins/DX702_ExperimentalDesign-Causality.git"
